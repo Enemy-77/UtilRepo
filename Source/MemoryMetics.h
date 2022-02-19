@@ -21,3 +21,8 @@ void operator delete(void* memory, size_t size)
 	s_AllocationMetric.TotalFreed += size;
 	free(memory);
 }
+
+static void PrintMemoryUsage()
+{
+	std::cout << "Memory Usage: " << s_AllocationMetric.CurrentUsage() << "bytes\n";
+}
